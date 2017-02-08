@@ -1,0 +1,1 @@
+{"version":3,"sources":["en_US.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA","file":"en_US.js","sourcesContent":["const trans = (code) => {\n  const maps = {\n    login: 'Login',\n  };\n  return maps[code] || code;\n};\n"]}
