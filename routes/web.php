@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => ['auth', 'role:' . \App\Models\User::ADMIN]], function () {
+    Route::get('/', 'DashboardController@index')->name('home');
+    Route::resource('dashboard', 'DashboardController');
 });
